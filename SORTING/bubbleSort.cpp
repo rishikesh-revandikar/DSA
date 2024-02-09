@@ -5,12 +5,19 @@ void bubblesort(int arr[], int n)
 {
   for (int i = n - 1; i >= 1; i--)
   {
+    int isSwapped = 0;
     for (int j = 0; j <= i - 1; j++)
     {
       if (arr[j] > arr[j + 1])
       {
         swap(arr[j], arr[j + 1]);
+        isSwapped = 1;
       }
+    }
+    if (!isSwapped)
+    {
+      cout << "Array is already sorted";
+      break;
     }
   }
 
